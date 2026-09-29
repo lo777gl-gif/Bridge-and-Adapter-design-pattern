@@ -1,0 +1,1 @@
+public record AudioMetadata(int channels, int sampleRate, int bitDepth) { }
