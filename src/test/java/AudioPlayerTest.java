@@ -28,8 +28,7 @@ class AudioPlayerTest {
     @Test
     void adapterTranslatesSdkFailure() {
         LibFlacNativeSdk sdk = mock(LibFlacNativeSdk.class);
-        when(sdk.processStreamBlock(any(), anyInt(), anyInt(), any()))
-                .thenReturn(LibFlacNativeSdk.FLAC_ERR_SYNC);
+        when(sdk.processStreamBlock(any(), anyInt(), anyInt(), any())).thenReturn(LibFlacNativeSdk.FLAC_ERR_SYNC);
 
         FlacCodecAdapter adapter = new FlacCodecAdapter(sdk);
         assertThrows(AudioCodecException.class, () -> adapter.decodeToPcm(new byte[]{1}));

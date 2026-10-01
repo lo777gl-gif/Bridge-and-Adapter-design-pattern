@@ -16,8 +16,7 @@ public class FlacCodecAdapter implements AudioCodec {
 
     @Override
     public void initialize(AudioMetadata metadata) throws AudioCodecException {
-        int result = sdk.configureDecoder(
-                metadata.channels(), metadata.sampleRate(), metadata.bitDepth());
+        int result = sdk.configureDecoder(metadata.channels(), metadata.sampleRate(), metadata.bitDepth());
 
         if (result != LibFlacNativeSdk.FLAC_OK) {
             throw new AudioCodecException("Could not initialize FLAC decoder");

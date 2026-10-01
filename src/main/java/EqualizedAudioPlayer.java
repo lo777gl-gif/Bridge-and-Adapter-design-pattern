@@ -11,7 +11,7 @@ public class EqualizedAudioPlayer extends AudioPlayer {
     @Override
     public byte[] processAudio(byte[] audio) throws AudioCodecException {
         byte[] pcm = codec.decodeToPcm(audio);
-        System.out.println("EQ preset: " + preset);
+        System.out.println("Equalizer preset: " + preset);
         return pcm;
     }
 }
